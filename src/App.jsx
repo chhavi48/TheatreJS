@@ -9,11 +9,11 @@ import {
 import FantasyBook from "./modelComponents/FantasyBook";
 
 function App() {
-  const sheet = getProject("Fly Through 9").sheet("Scene");
+  const sheet = getProject("Fly Through 2").sheet("Scene");
   return (
     <>
       <Canvas gl={{ preserveDrawingBuffer: true }}>
-      <ScrollControls pages={5}>
+      <ScrollControls pages={5} damping={1} maxSpeed={1}>
       <SheetProvider sheet={sheet}>
         <Scene />
         </SheetProvider>
@@ -46,7 +46,7 @@ function Scene() {
         makeDefault
         position={[0, 0, 0]}
         fov={90}
-        near={0.1}
+        near={0.2}
         far={70}
       />
     </>
